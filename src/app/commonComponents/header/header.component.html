@@ -1,0 +1,30 @@
+
+<nav class="header">
+  <div class="header-left">
+    <div class="logo">
+     <app-logo-image></app-logo-image>
+    </div>
+    <h1 class="heading">JusDrive</h1>
+  </div>
+  <div class="header-right">
+
+    <div class="notification-container">
+      <i class="fas fa-bell"></i>
+      <div class="dropdown">
+        <a routerLink="/notifications">View Notifications</a>
+        <a routerLink="/alerts">Manage Alerts</a>
+      </div>
+    </div>
+    
+    <div class="avatar-container">
+      <app-avatar-image></app-avatar-image>
+      <div class="dropdown">
+        <a routerLink="/profile">Profile</a>
+        <a routerLink="/settings">Settings</a>
+        <a routerLink="/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+

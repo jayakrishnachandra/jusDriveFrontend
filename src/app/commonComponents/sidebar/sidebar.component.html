@@ -1,0 +1,23 @@
+<aside class="sidebar" *ngIf="!isMobile || isSidebarOpen">
+  <ul class="nav-links">
+    <li>
+      <a (click)="navigateTo('/dashboard')">
+        <i class="fas fa-gauge icon"></i> Dashboard
+      </a>
+    </li>
+    <li>
+      <a (click)="navigateTo('/vehicle-management')">
+        <i class="fas fa-car icon"></i> Vehicle Management
+      </a>
+    </li>
+    <li>
+      <a (click)="navigateTo('/customer-enquiry')">
+        <i class="fas fa-envelope icon"></i> Customer Enquiry
+      </a>
+    </li>
+  </ul>
+</aside>
+<div class="toggle" *ngIf="isMobile" (click)="toggleSidebar()">
+  <i class="fas fa-bars"></i>
+</div>
+<div class="overlay" *ngIf="isMobile && isSidebarOpen" (click)="closeSidebar()"></div>

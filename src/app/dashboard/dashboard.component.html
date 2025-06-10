@@ -1,0 +1,16 @@
+<div class="dashboard-container">
+  <div class="dashboard-cards">
+    <div class="dashboard-card" (click)="goToVehicleManagement()">
+      <h3>Registered Cars</h3>
+      <p>{{ registeredCarsCount }}</p>
+    </div>
+    <div class="dashboard-card" (click)="goToVehicleManagement()">
+      <h3>Available Cars</h3>
+      <p>{{ availableCarsCount }}</p>
+    </div>
+    <div class="dashboard-card" (click)="goToCustomerEnquiry()">
+      <h3>Customer Enquiries</h3>
+      <p>{{ customerEnquiryCount }}</p>
+    </div>
+  </div>
+</div>

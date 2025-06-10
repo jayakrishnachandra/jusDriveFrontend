@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JusDrive Owner Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --light-blue: #91d2e8;
+      --teal-blue: #1da1b9;
+      --navy-blue: #002b3f;
+      --yellow: #ffbe00;
+      --orange: #ff8a00;
+    }
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .main-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: var(--light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    .left-panel img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .tagline {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      color: var(--navy-blue);
+      font-size: 1.5rem;
+      font-weight: 600;
+      max-width: 80%;
+      z-index: 10;
+    }
+
+    .brand {
+      color: var(--navy-blue);
+      font-weight: bold;
+    }
+
+    .right-panel {
+      flex: 1;
+      background-color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .form-box h2 {
+      color: var(--navy-blue);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .form-control:focus {
+      border-color: var(--teal-blue);
+      box-shadow: 0 0 0 0.2rem rgba(29, 161, 185, 0.25);
+    }
+
+    .btn-custom {
+      background-color: var(--orange);
+      color: white;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #e67600;
+    }
+
+    .right-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 100%;
+      background-color: var(--yellow);
+    }
+
+    /* Radio Button Styles */
+    .owner-type {
+      margin-bottom: 20px;
+    }
+
+    .form-section {
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      .left-panel,
+      .right-panel {
+        flex: unset;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .right-panel::before {
+        display: none;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        left: 20px;
+        top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="tagline">
+        <h2 class="display-5">
+          Why keeping your car idle, <br />
+          while you can rent with <span class="brand">JusDrive</span>?
+        </h2>
+      </div>
+      <img src="images/jusride_owner_car_2.svg" alt="Car Owner Illustration">
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="form-box">
+        <!-- <h1 style="color: var(--navy-blue);">
+          Welcome to <b><span style="color: var(--yellow);">JusRide</span></b>
+        </h1> -->
+        <h2 class="mb-4" style="color: var(--navy-blue); font-weight: 500;">Signup</h2>
+
+        <!-- Radio Buttons for Owner Type -->
+        <div class="owner-type">
+          <label class="form-label" style="font-weight: bold;">Owner Type:</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ownerType" id="individualRadio" value="individual" checked>
+            <label class="form-check-label" for="individualRadio">Individual</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ownerType" id="commercialRadio" value="commercial">
+            <label class="form-check-label" for="commercialRadio">Commercial</label>
+          </div>
+        </div>
+
+        <!-- Individual Owner Form -->
+        <form id="individualForm" class="form-section active">
+          <div class="mb-3">
+            <label for="indName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="indName" required>
+          </div>
+          <div class="mb-3">
+            <label for="indEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="indEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="indPhone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="indPhone" required>
+          </div>
+          <div class="mb-3">
+            <label for="indCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="indCity" required>
+          </div>
+          <div class="mb-3">
+            <label for="indPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="indPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="indConfirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="indConfirmPassword" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-custom">Sign Up</button>
+          </div>
+        </form>
+
+        <!-- Commercial Owner Form -->
+        <form id="commercialForm" class="form-section">
+          <div class="mb-3">
+            <label for="comName" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="comName" required>
+          </div>
+          <div class="mb-3">
+            <label for="comEmail" class="form-label">Company Email</label>
+            <input type="email" class="form-control" id="comEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="comPhone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="comPhone" required>
+          </div>
+          <div class="mb-3">
+            <label for="comCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="comCity" required>
+          </div>
+          <div class="mb-3">
+            <label for="comPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="comPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="comConfirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="comConfirmPassword" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-custom">Sign Up</button>
+          </div>
+        </form>
+
+        <p class="mt-3 text-center">
+          Already registered? <a href="owner_login.html" style="color: var(--teal-blue);">Login here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const individualRadio = document.getElementById('individualRadio');
+    const commercialRadio = document.getElementById('commercialRadio');
+    const individualForm = document.getElementById('individualForm');
+    const commercialForm = document.getElementById('commercialForm');
+
+    individualRadio.addEventListener('change', () => {
+      if (individualRadio.checked) {
+        individualForm.classList.add('active');
+        commercialForm.classList.remove('active');
+      }
+    });
+
+    commercialRadio.addEventListener('change', () => {
+      if (commercialRadio.checked) {
+        commercialForm.classList.add('active');
+        individualForm.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
